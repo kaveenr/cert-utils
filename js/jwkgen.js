@@ -54,5 +54,3 @@ class JwksGenApp extends React.Component {
       )
     }
   }
-  
-  ReactDOM.render(<JwksGenApp />, document.querySelector("#jwks"))

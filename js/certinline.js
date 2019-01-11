@@ -1,4 +1,4 @@
-class CerinlineApp extends React.Component {
+class CertinlineApp extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
@@ -28,5 +28,3 @@ class CerinlineApp extends React.Component {
       )
     }
   }
-  
-  ReactDOM.render(<CerinlineApp />, document.querySelector("#cert"))

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Certificate Utils</title>
 </head>
 <body>
@@ -18,5 +20,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.7.0/umd/react-dom.production.min.js"></script>
     <script type="text/jsx" data-presets="es2017,react,stage-0" data-plugins="transform-decorators-legacy" src="js/jwkgen.js"></script>
     <script type="text/jsx" data-presets="es2017,react,stage-0" data-plugins="transform-decorators-legacy" src="js/certinline.js"></script>
+    <script type="text/jsx" data-presets="es2017,react,stage-0" data-plugins="transform-decorators-legacy">
+          ReactDOM.render(<JwksGenApp />, document.querySelector("#jwks"))
+          ReactDOM.render(<CertinlineApp />, document.querySelector("#cert"))
+    </script>
 </body>
 </html>
