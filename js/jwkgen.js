@@ -16,16 +16,6 @@ class JwksGenApp extends React.Component {
       })
     }
     
-    createKid(){
-      var dt = new Date().getTime();
-      var uuid = 'xxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          var r = (dt + Math.random()*16)%16 | 0;
-          dt = Math.floor(dt/16);
-          return (c=='x' ? r :(r&0x3|0x8)).toString(16);
-      });
-      return uuid;
-  }
-    
     getJWK(cert){
         let key = null;
         try {
@@ -36,7 +26,7 @@ class JwksGenApp extends React.Component {
       let jwk = KEYUTIL.getJWKFromKey(key);
       jwk.alg = this.state.alg;
       jwk.use= this.state.use;
-      jwk.kid = this.createKid();
+      jwk.kid = KJUR.jws.JWS.getJWKthumbprint(jwk);
       
       return JSON.stringify(jwk, null, 2);
     }
